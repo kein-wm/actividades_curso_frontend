@@ -26,18 +26,23 @@ const condicionesDeVictoria = [
 
 info.textContent = `Turno de - "${turnoDelJugador}"`;
 
-// E J E M P L O # 1 - funcion Victoria()
-const victoria = () =>
-  (
-    condicionesDeVictoria.find(
-      ([a, b, c]) =>
-        estadoDelJuego[a] &&
-        estadoDelJuego[a] === estadoDelJuego[b] &&
-        estadoDelJuego[a] === estadoDelJuego[c]
-    ) || []
-  ).forEach((i) => (boxes[i].style.backgroundColor = "#090"));
+// E J E M P L O # 1 - Funcion Victoria
+const victoria = () => {
+  const ganador = condicionesDeVictoria.find(
+    ([a, b, c]) =>
+      estadoDelJuego[a] &&
+      estadoDelJuego[a] === estadoDelJuego[b] &&
+      estadoDelJuego[a] === estadoDelJuego[c]
+  );
 
-// E J E M P L O # 2 - funcion Victoria()
+  if (ganador) {
+    ganador.forEach((i) => (boxes[i].style.backgroundColor = "#090"));
+  }
+
+  return ganador;
+};
+
+// E J E M P L O # 2 - Funcion Victoria
 /*
 const victoria = () => {
   for (const [a, b, c] of condicionesDeVictoria) {
@@ -52,6 +57,11 @@ const victoria = () => {
 }
 */
 
+// E J E M P L O # 3 - Funcion Victoria
+/*
+const victoria = () => condicionesDeVictoria.find(([a, b, c]) => estadoDelJuego[a] && estadoDelJuego[a] === estadoDelJuego[b] && estadoDelJuego[a] === estadoDelJuego[c])
+*/
+
 const clicksCeldas = (_, i) => {
   if (!juegoEnCurso || estadoDelJuego[i]) return;
 
@@ -64,13 +74,15 @@ const clicksCeldas = (_, i) => {
     info.textContent = `El Ganador es "${turnoDelJugador}"`;
     juegoEnCurso = false;
 
-    // C O L O C A R   L A S   C E L D A S   G A N A D O R A S   E N   V E R D E
+    // C O L O R E A R   E N   V E R D E   L I N E A   G A N A D O R A
     // victoria().forEach(i => boxes[i].style.backgroundColor = "#090"); // otro ejemplo para cambiar el color de las casillas ganadoras, sin cambiarlo directamente dentro de la funcion "victoria()" con el ".forEach"
     // lineaGanadora.forEach(i => boxes[i].style.backgroundColor = "#090"); // otro ejemplo, colocando la funcion dentro de una variable para tambien poderle hacer el ".forEach" sin necesidad de colcocar la funcion directamente
+
   } else if (!estadoDelJuego.includes("")) {
     info.textContent = "Hay un Empate";
     juegoEnCurso = false;
     boxes.forEach((box) => (box.style.backgroundColor = "#900"));
+    
   } else {
     turnoDelJugador = turnoDelJugador === "X" ? "O" : "X";
     info.textContent = `Turno de - "${turnoDelJugador}"`;
@@ -95,8 +107,7 @@ restart_btn.addEventListener("click", e => {
   juegoEnCurso = true;
   turnoDelJugador = "X";
   estadoDelJuego = Array(9).fill("");
-  boxes.forEach((box) => (box.textContent = ""));
-  boxes.forEach((box) => (box.style.backgroundColor = "#fff"));
+  boxes.forEach(box => box.textContent = "");
   info.textContent = `Turno de - "${turnoDelJugador}"`;
 });
 */
