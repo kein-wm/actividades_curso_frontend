@@ -1,0 +1,10 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #717171;
+  color: black;
+  font-size: 2rem;
+}

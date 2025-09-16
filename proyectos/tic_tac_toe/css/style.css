@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --violeta: #470d67;
+  --amarillo: #dee45e;
+  --verde-agua: #00b4aa;
+  --gris: #434143;
+  --blanco: white;
+  --negro: black;
+}
+
+body {
+  height: 100vh; /* alto */
+  background-image: url(../img/fondo_morado_degrade.png);
+  background-size: cover;
+  display: flex;
+  align-items: center; /* eje vertical cuando esta en row y en column es el eje horizontal */
+  justify-content: center; /* eje horizontal cuando esta en row y en column es el eje vertical */
+  color: var(--violeta);
+}
+
+.container {
+  width: 50vw; /* ancho */
+  height: 90vh; /* alto */
+  background-color: var(--blanco);
+  border-radius: 1.5vw 1.5vw 8vw 1.5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* eje horizontal */
+  justify-content: center; /* eje vertical */
+
+  & h1 {
+    font-size: 4vw;
+    margin-bottom: 2vh;
+  }
+
+  & .table{
+    width: 36vw; /* ancho */
+    height: 60vh; /* alto */
+    background-color: var(--violeta);
+    gap: .7vw;
+    border-radius: .8vw;
+    margin-bottom: 2vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+
+    & .box{
+      width: 100%;
+      height: 100%;
+      background-color: var(--blanco);
+      color: var(--amarillo);
+      font-size: 15vh;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  & .restart {
+    background-color: var(--blanco);
+    color: var(--violeta);
+    font-size: 1.2vw;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 2vh;
+    padding: .6vh 1.2vw;
+    border-radius: .3vw;
+    border: .2vw solid var(--violeta);
+
+    &:hover {
+      background-color: var(--violeta);
+      color: var(--blanco);
+    }
+  }
+
+  & .status {
+    color: var(--violeta);
+    font-size: 1.5vw;
+    margin-bottom: 2vh;
+  }
+}
+

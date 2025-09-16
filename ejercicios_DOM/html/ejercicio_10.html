@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ejercicio DOM #10</title>
+
+    <link rel="stylesheet" href="../css/ejercicios.css" />
+
+    <style>
+      body {
+        width: 100vw; /* eje horizontal */
+        height: 100vh; /* eje vertical */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* eje horizontal */
+        justify-content: center;
+      }
+
+      figure {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        & img {
+          width: 9.5vw;
+          margin-bottom: .5rem;
+          cursor: pointer;
+          border-radius: 100%;
+          background-color: black;
+        }
+
+        & figcaption {
+          width: 9.5vw;
+          font-size: 1rem;
+          text-align: center;
+          padding-bottom: 1.2rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <figure>
+      <img src="/portafolio/img/isotipo_blanco.png" alt="Imagen de Ejemplo #1">
+      <figcaption>
+        Este es un pie de foto descriptivo de la imagen proporcionada en la figura.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="/portafolio/img/isotipo_blanco.png" alt="Imagen de Ejemplo #2">
+      <figcaption>
+        Este es un pie de foto descriptivo de la imagen proporcionada en la figura.
+      </figcaption>
+    </figure>
+
+    <figure>
+      <img src="/portafolio/img/isotipo_blanco.png" alt="Imagen de Ejemplo #3">
+      <figcaption>
+      </figcaption>
+    </figure>
+
+    <script src="../js/ejercicio_10.js"></script>
+  </body>
+</html>
