@@ -59,7 +59,7 @@ const restartGame = () => {
   turnoDelJugador = "X";
   estadoDelJuego = Array(9).fill("");
   boxes.forEach(box => box.textContent = "");
-  boxes.forEach(box => box.style.backgroundColor = "#fff");
+  boxes.forEach(box => box.style.color = "var(--amarillo)");
   info.textContent = `Turno del Jugador "${turnoDelJugador}"`;
   
   alert("Se ah Reiniciado el Juego");
